@@ -4,10 +4,10 @@ class UserController extends CI_Controller {
         parent::__construct ();
     }
     public function index() {
-        $this->load->view ( "register.php" );
+        $this->load->view ( "register" );
     }
     public function register() {
-        $name = $this->input->post ( 'username' );
+        $name = $this->input->post ( 'name' );
         $password = $this->input->post ( 'password' );
         $this->load->model ( 'UserModel' );
         $result = $this->UserModel->register ( $name, $password );
@@ -21,7 +21,7 @@ class UserController extends CI_Controller {
         $this->load->view ( "login.php" );
     }
     public function login() {
-        $name = $this->input->post ( 'username' );
+        $name = $this->input->post ( 'name' );
         $password = $this->input->post ( 'password' );
         $this->load->model ( 'UserModel' );
 

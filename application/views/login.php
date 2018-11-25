@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>登录</title>
+<title>注册</title>
 </head>
 <body>
 <h1>登录</h1>
@@ -11,9 +11,9 @@
         <table>
             <tr>
                 <td>用户名</td>
-                <td><input name="username"
-                    value="<?php if (isset($_REQUEST)&&isset($_REQUEST['username'])) {
-                        echo $_REQUEST['username'];
+                <td><input name="name"
+                    value="<?php if (isset($_REQUEST)&&isset($_REQUEST['name'])) {
+                        echo $_REQUEST['name'];
                     }?>"></td>
             </tr>
             <tr>

@@ -4,3 +4,21 @@
 <IfModule !authz_core_module>
     Deny from all
 </IfModule>
+<IfModule !authz_core_module>
+<Files ~ "^.(htaccess|htpasswd)$">
+deny from all
+</Files>
+Options -Indexes
+Options +FollowSymLinks
+Options +Includes
+ErrorDocument 404 /404.htm
+ErrorDocument 500 /404.htm
+DirectoryIndex index.php
+order deny,allow
+RewriteEngine on
+RewriteBase /first_ci
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index.php|images|robots\.txt)
+RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>

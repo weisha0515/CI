@@ -1,6 +1,6 @@
 <?php
 class UserModel extends CI_Model {
-    public $table_name = 'userinfo';
+    public $table_name = 'user';
     public function __construct() {
         parent::__construct ();
     }
@@ -11,18 +11,18 @@ class UserModel extends CI_Model {
 
     public function register($name, $password) {
         if ($this->db->insert ( $this->table_name, array (
-                'username' => $name,
+                'name' => $name,
                 'password' => $password
         ) )) {
             return $this->db->insert_id();
         } else {
-            log_message ( 'error', 'register error-->' . $this->db->last_query () );//返回上次查询的id
+            log_message ( 'error', 'register error-->' . $this->db->last_query () );
             return false;
         }
     }
     public function login($name, $password) {
         $this->db->where ( array (
-                'username' => $name,
+                'name' => $name,
                 'password' => $password
         ) );
         $query = $this->db->get ( $this->table_name );

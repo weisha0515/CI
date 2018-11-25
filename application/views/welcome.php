@@ -8,6 +8,6 @@
     <h1>
         You login success!Welcome to First CI!
     </h1>
-    <h2>You username is <?php echo $_REQUEST["username"]?></h2>
+    <h2>You username is <?php echo $_REQUEST["name"]?></h2>
 </body>
 </html>
